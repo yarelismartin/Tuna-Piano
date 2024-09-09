@@ -29,8 +29,14 @@ Implement the [Action] route for the [Entity] entity. This route should allow fo
 
 - **HTTP Method**: 
 - **Path**: `/api/[entity]/[action]`
-- **Body**: 
+- **Body**:
+```
+
+ ```
 
 ### **Response**
 - **Body**: 
 - **Status Code**:
+```
+
+ ```
