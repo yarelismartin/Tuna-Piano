@@ -1,14 +1,14 @@
 ---
 name: Tuna Piano APIs
 about: Suggest an idea for this project
-title: "[Feature] Implement [Entity] - [Action] Route "
+title: "[Entity] - [Action] Route "
 labels: api
 assignees: ''
 
 ---
 
 ### **Description**  
-Implement the [Action] route for the [Entity] entity. This route should allow for the [CRUD action] of [Entity] data in the database.
+Implement the [Action] route for the [Entity] entity. 
 
 - **Entity**: 
 - **Action**: 
