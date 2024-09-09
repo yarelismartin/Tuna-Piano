@@ -25,7 +25,12 @@ Implement the [Action] route for the [Entity] entity. This route should allow fo
 
 ---
 
-### **Route Details**
+### **Request**
 
-- **HTTP Method**: [POST, GET, PUT, DELETE]  
-- **Endpoint**: `/api/[entity]/[action]`
+- **HTTP Method**: 
+- **Path**: `/api/[entity]/[action]`
+- **Body**: 
+
+### **Response**
+- **Body**: 
+- **Status Code**:
