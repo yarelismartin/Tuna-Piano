@@ -44,6 +44,43 @@ namespace Tuna_Piano.APIs
                     return Results.NotFound("No Song Found.");
                 }
             });
+
+            app.MapGet("/api/songs", (TunaPianoDbContext db) =>
+            {
+                var allSongs = db.Songs
+                .Include(s => s.Genres)
+                .Include(s => s.Artist)
+                .ToList();
+                if (allSongs.Any())
+                {
+                    return Results.Ok(allSongs);
+                }
+                else
+                {
+                    return Results.Ok("There are not songs to display");
+                }
+            });
+
+            app.MapPut("/api/songs/{songId}", (TunaPianoDbContext db, int songId, Song song) =>
+            {
+                Song songToUpdate = db.Songs.SingleOrDefault(s => s.Id == songId);
+                if (songToUpdate != null)
+                {
+                    songToUpdate.Title = song.Title;
+                    songToUpdate.ArtistId = song.ArtistId;
+                    songToUpdate.Album = song.Album;
+                    songToUpdate.Length = song.Length;
+
+                    db.SaveChanges();
+                    return Results.Ok(songToUpdate);
+                }
+                else
+                {
+                    return Results.NotFound("No song in the database matched this id");
+                }
+
+
+            });
         }
 
 
